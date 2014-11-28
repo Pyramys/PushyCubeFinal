@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class switchAI : MonoBehaviour {
-
+	
+	public string colorName;
 	// Use this for initialization
 	void Start () {
 	
@@ -13,42 +14,7 @@ public class switchAI : MonoBehaviour {
 	
 	}
 	
-	void OnTriggerEnter(Collider col)
-	{
-		if(col.name == "RedCube" && gameObject.name == "RedSwitch")
-		{
-			gameObject.renderer.enabled = false;
-			GameObject.Find("LevelManager").SendMessage("setRed");
-			GameObject.Find("Player").SendMessage("dropCrystal");
-			gameObject.collider.enabled = false;
-			GameObject.Find("Singleton").SendMessage("playLockSound");
-		}
-		if(col.name == "BlueCube" && gameObject.name == "BlueSwitch")
-		{
-			gameObject.renderer.enabled = false;
-			GameObject.Find("LevelManager").SendMessage("setBlue");
-			GameObject.Find("Player").SendMessage("dropCrystal");
-			gameObject.collider.enabled = false;
-			GameObject.Find("Singleton").SendMessage("playLockSound");
-		}
-		if(col.name == "YellowCube" && gameObject.name == "YellowSwitch")
-		{
-			gameObject.renderer.enabled = false;
-			GameObject.Find("LevelManager").SendMessage("setYellow");
-			GameObject.Find("Player").SendMessage("dropCrystal");
-			gameObject.collider.enabled = false;
-			GameObject.Find("Singleton").SendMessage("playLockSound");
-		}
-		if(col.name == "GreenCube" && gameObject.name == "GreenSwitch")
-		{
-			gameObject.renderer.enabled = false;
-			GameObject.Find("LevelManager").SendMessage("setGreen");
-			GameObject.Find("Player").SendMessage("dropCrystal");
-			gameObject.collider.enabled = false;
-			GameObject.Find("Singleton").SendMessage("playLockSound");
-		}
-	
-	}
+
 	
 	void OnCollisionEnter(Collision col)
 	{

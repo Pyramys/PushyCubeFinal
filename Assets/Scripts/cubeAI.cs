@@ -6,7 +6,7 @@ public class cubeAI : MonoBehaviour {
 	public Vector3 setPosition;
 	public bool isChild=false;
 	public Vector3 currentTransform;
-	
+	public string colorName;
 	// Use this for initialization
 	void Start () {
 		
@@ -20,29 +20,22 @@ public class cubeAI : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider col)
 	{
-		if(col.name == "RedSwitch" && gameObject.name == "RedCube")
+		if (col.tag != "Switch") 
 		{
-			isChild= false;
-			gameObject.rigidbody.isKinematic = true;
-			transform.parent=null;
-			Deactivate();
+
+			return;
 		}
-		if(col.name == "BlueSwitch" && gameObject.name == "BlueCube")
+		Debug.Log("Trigger Enter confirmed");
+		switchAI temp = col.GetComponent<switchAI> ();
+		if(temp.colorName == this.colorName)
 		{
-			isChild= false;
-			gameObject.rigidbody.isKinematic = true;
-			transform.parent=null;
-			Deactivate();
-		}
-		if(col.name == "YellowSwitch" && gameObject.name == "YellowCube")
-		{
-			isChild= false;
-			gameObject.rigidbody.isKinematic = true;	
-			transform.parent=null;
-			Deactivate();
-		}
-		if(col.name == "GreenSwitch" && gameObject.name == "GreenCube")
-		{
+			Debug.Log("Colorname confirm");
+			temp.gameObject.renderer.enabled = false;
+			gameObject.collider.enabled = false;
+			GameObject.Find("LevelManager").SendMessage(colorName);
+			GameObject.Find("Player").SendMessage("dropCrystal");
+			GameObject.Find("Singleton").SendMessage("playLockSound");
+
 			isChild= false;
 			gameObject.rigidbody.isKinematic = true;
 			transform.parent=null;
