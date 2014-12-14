@@ -5,18 +5,27 @@ public class ArcaneSpawner : MonoBehaviour {
 	public GameObject projectile;
 	
 	
-	
-	public Vector3 randomDirection;
-	public int randomX;
-	public int randomY;
-	public int randomZ;
+
+	//public Vector3 randomDirection;
+	//public int randomX;
+	//public int randomY;
+	//public int randomZ;
+	public bool randBool = true;
+	public float randomY = 0;
+	GameObject blast;
+
 	
 	
 	void Awake(){
-		randomX = Random.Range(0,360);
-		randomY = Random.Range(0,360);
-		randomZ = Random.Range(0,360);
-		randomDirection = new Vector3(randomX, 0,randomZ);
+		//randomX = Random.Range(0,360);
+		//randomY = Random.Range(0,360);
+		//randomZ = Random.Range(0,360);
+		//randomDirection = new Vector3(randomX, 0,randomZ);
+		if (randBool) 
+		{
+			randomY = Random.Range (0, 360);
+		}
+		transform.Rotate (new Vector3 (0, randomY, 0));
 	}
 	
 	// Use this for initialization
@@ -33,8 +42,10 @@ public class ArcaneSpawner : MonoBehaviour {
 	
 	void spawnArcaneBlast()
 	{
-		GameObject blast = Instantiate(projectile,transform.position, transform.rotation) as GameObject;
-		blast.rigidbody.AddForce(randomDirection * 5);
+		//blast.rigidbody.AddForce(randomDirection * 5);
+		
+		blast = Instantiate(projectile,transform.position, transform.rotation) as GameObject;
+		blast.rigidbody.AddForce(blast.transform.forward * 5);
 		
 		
 	}

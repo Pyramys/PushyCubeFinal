@@ -2,23 +2,13 @@
 /////Kyle Change Log 12/ 1/ 2014 ///////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 __To Commits___
-Arcane Material
-Arcane Blast Prefab
-Arcane Blast Spawner
+PlayerAI script
 
 _____Notes_____
-*Created Document folder to hold Change log files and Proposal files.  (maybe not need? idk)
 
-*Verified updates to prefabs cubes and switches applied across all scenes.  It was automatic.
+*Implemented timed invincibility afer taking damage.
+*a check was added to update to change isInvinsible false after a set time (timeInvincible).
+*Included a public float variable (timeInvincible) to adjust length of invincibility.
 
-*Created Arcane Physics Material and applied it to arcane blast prefab.  Bounce now maintains angles better
-			However applying constant force is still required
+* removed gameObject.find from update and assigned it to a stored variable once at start.
 
-*Modified ArcaneSpawner to use randomY and blast.transform.forward rather than the randomX, randomY, random direction combination.
-This has the advantage of allowing us to only need to manipulate 1 number to get the same change in direction.
-Left the old code in just commented out for comparison.  Can be removed if you agree with the changes.
-
-*removed the restriction on Arcane blasts Y rotation to allow the previous change to work
-
-*implemented a public bool to ArcaneSpawer that will allow us to change whether it spawns a blast at random or a
-set direction.  This can give us more control over difficulty in key locations.

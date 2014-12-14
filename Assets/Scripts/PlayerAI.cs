@@ -13,13 +13,17 @@ public class PlayerAI : MonoBehaviour {
 	public Vector3 currentTransform;
 	public Vector3 Origin;
 	public GameObject hurt;
-	public bool isInvincible = false;
+	GameObject singleton;
 
+	public float timeInvincible = 3.0f;
+	bool isInvincible = false;
+	float invincibleTill;
 
 	// Use this for initialization
 	void Start () {
 		Origin = new Vector3(0,0,0);
 		isInvincible=true;
+		singleton = GameObject.Find ("Singleton");
 	}
 	
 	// Update is called once per frame
@@ -31,6 +35,12 @@ public class PlayerAI : MonoBehaviour {
 		checkHP();
 		checkBounds();
 		//checkAngle();						//Check to see if the angle is greater or less than the max and min angle of separation
+
+
+		if (isInvincible && Time.time > invincibleTill) 
+		{
+			isInvincible = false;
+		}
 	}
 	
 	void OnCollisionEnter(Collision col)
@@ -43,7 +53,9 @@ public class PlayerAI : MonoBehaviour {
 				transform.position=transform.position;
 				hp--;									//if collide with trap -1 HP
 				GameObject hurtEffect = Instantiate(hurt,transform.position, transform.rotation) as GameObject;
-				GameObject.Find("Singleton").SendMessage("wasHurt");
+				singleton.SendMessage("wasHurt");
+				isInvincible = true;
+				invincibleTill = Time.time + timeInvincible;
 			}
 
 		}

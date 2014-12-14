@@ -1,10 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\cubeAI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Documentation\ChangeLog 12.1.2014.txt">
     <Files>
-      <File FileName="Assets\Scripts\cubeAI.cs" Line="32" Column="32" />
-      <File FileName="Assets\Scripts\switchAI.cs" Line="30" Column="1" />
-      <File FileName="Assets\Scripts\Level1Manager.cs" Line="77" Column="1" />
+      <File FileName="Assets\Scripts\PlayerAI.cs" Line="34" Column="52" />
+      <File FileName="Assets\Documentation\ChangeLog 12.1.2014.txt" Line="11" Column="50" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class StatueAI : MonoBehaviour {
-	public bool active=false;
+	public bool active= false;
 	public Vector3 movementDirection;
 	public Vector3 playerPosition;
 	public float speed=1.0f;

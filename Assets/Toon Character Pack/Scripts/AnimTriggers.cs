@@ -12,7 +12,13 @@ public class AnimTriggers : MonoBehaviour
 		// initialise the reference to the animator component
 		animator = gameObject.GetComponent<Animator>();
 	}
-	
+
+	void Update()
+	{
+		animator.SetBool("Run", true);	
+
+	}
+
 	// check for colliders with a Trigger collider
 	// if we are entering something called JumpTrigger, set a bool parameter called JumpDown to true..
 	void OnTriggerEnter(Collider col)
