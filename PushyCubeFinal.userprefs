@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Documentation\ChangeLog 12.1.2014.txt">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ArcaneBlast.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerAI.cs" Line="34" Column="52" />
-      <File FileName="Assets\Documentation\ChangeLog 12.1.2014.txt" Line="11" Column="50" />
+      <File FileName="Assets\Scripts\ArcaneSpawner.cs" Line="67" Column="3" />
+      <File FileName="Assets\Scripts\ArcaneBlast.cs" Line="16" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
