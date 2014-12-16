@@ -22,7 +22,6 @@ public class PlayerAI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Origin = new Vector3(0,0,0);
-		isInvincible=true;
 		singleton = GameObject.Find ("Singleton");
 	}
 	
@@ -129,11 +128,7 @@ public class PlayerAI : MonoBehaviour {
 
 	public void checkMovement()
 	{
-		if(Input.GetMouseButton(0))
-		{
-			isInvincible=false;
 
-		}
 	}
 	void calculateSpeed()
 	{
