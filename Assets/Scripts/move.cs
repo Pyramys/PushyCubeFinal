@@ -7,6 +7,7 @@ public class move : MonoBehaviour {
 	private Vector3 destinationPosition;		// The destination Point
 	private float destinationDistance;			// The distance between myTransform and destinationPosition
 	PlayerAI Player;
+	public bool Run;
 	//public static Vector3 passDestination;
 	
  
@@ -27,9 +28,12 @@ public class move : MonoBehaviour {
  
 		if(destinationDistance < .001f){		// To prevent shakin behavior when near destination
 			moveSpeed = 0;
+			Run=false;
+			
 		}
 		else if(destinationDistance > .1f){			// To Reset Speed to default
 			moveSpeed = 5;
+			Run=true;
 		}
  
  
@@ -39,13 +43,14 @@ public class move : MonoBehaviour {
 			Plane playerPlane = new Plane(Vector3.up, myTransform.position);
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			float hitdist = 0.0f;
- 
+			Run=true;
 			if (playerPlane.Raycast(ray, out hitdist)) {
 				Vector3 targetPoint = ray.GetPoint(hitdist);
 				destinationPosition = ray.GetPoint(hitdist);
 				//passDestination=destinationPosition;
 				Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
 				myTransform.rotation = targetRotation;
+				
 			}
 		}
  
@@ -55,6 +60,7 @@ public class move : MonoBehaviour {
 			Plane playerPlane = new Plane(Vector3.up, myTransform.position);
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			float hitdist = 0.0f;
+			Run=true;
  
 			if (playerPlane.Raycast(ray, out hitdist)) {
 				Vector3 targetPoint = ray.GetPoint(hitdist);

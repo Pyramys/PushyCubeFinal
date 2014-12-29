@@ -2,13 +2,13 @@
 /////Kyle Change Log 12/ 1/ 2014 ///////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 __To Commits___
-Level01
+PlayerAI script
 
 _____Notes_____
 
-Difficulty Adjustments
-*Removed Arcane Spawner 4 and 5
+*Implemented timed invincibility afer taking damage.
+*a check was added to update to change isInvinsible false after a set time (timeInvincible).
+*Included a public float variable (timeInvincible) to adjust length of invincibility.
 
-*adjusted initial position and angle of Arcane Spawner 1, 2, and 3
-
+* removed gameObject.find from update and assigned it to a stored variable once at start.
 

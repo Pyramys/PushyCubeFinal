@@ -1,0 +1,16 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////Thomas Change Log 12/ 29/ 2014 ///////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+__To Commits___
+All level scenes
+LevelManager Prefab
+ActivateLevelElements script
+new LevelManager script
+
+_____Notes_____
+
+Revamped the level manager concept. Instead of having a level manager for every scene, there is one manager that changes it's behavior based on the current level. 
+This required having something on scene load to send a message. So the plane has a script labeled "Activate Level Elements" that runs on Start().
+Some levels do not have green cubes, so on those levels green is initially set to true.
+Everytime a new level is loaded all the bools are set to false, and the level index is incremented.
+
