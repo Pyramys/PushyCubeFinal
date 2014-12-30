@@ -43,3 +43,6 @@ Temporary Items
 .apdisk
 
 *.csproj
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+PushyCubeFinal-csharp.v11.suo
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
