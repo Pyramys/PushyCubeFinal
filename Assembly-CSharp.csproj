@@ -85,6 +85,7 @@
      <Compile Include="Assets\Scripts\StatueAI.cs" />
      <Compile Include="Assets\Scripts\Test.cs" />
      <Compile Include="Assets\Scripts\WallAI.cs" />
+     <Compile Include="Assets\Scripts\WaveScript.cs" />
      <Compile Include="Assets\Scripts\cube5AI.cs" />
      <Compile Include="Assets\Scripts\cubeAI.cs" />
      <Compile Include="Assets\Scripts\getPlayerPosition.cs" />

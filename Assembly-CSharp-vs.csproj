@@ -85,6 +85,7 @@
      <Compile Include="Assets\Scripts\StatueAI.cs" />
      <Compile Include="Assets\Scripts\Test.cs" />
      <Compile Include="Assets\Scripts\WallAI.cs" />
+     <Compile Include="Assets\Scripts\WaveScript.cs" />
      <Compile Include="Assets\Scripts\cube5AI.cs" />
      <Compile Include="Assets\Scripts\cubeAI.cs" />
      <Compile Include="Assets\Scripts\getPlayerPosition.cs" />
@@ -113,7 +114,7 @@
      <None Include="Assets\Toon Character Pack\Shaders\Unlit-Alpha.shader" />
      <None Include="Assets\Documentation\ChangeLog 12.1.2014.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Kyle/Documents/GitHub/PushyCubeFinal/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/Owner/Documents/GitHub/PushyCubeFinal/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
