@@ -5,11 +5,11 @@ public class move : MonoBehaviour {
 	
 	private Transform myTransform;				// this transform
 	private Vector3 destinationPosition;		// The destination Point
-	private float destinationDistance;			// The distance between myTransform and destinationPosition
+	public float destinationDistance;			// The distance between myTransform and destinationPosition
 	PlayerAI Player;
 	public bool Run;
 	//public static Vector3 passDestination;
-	
+   private Animator anim;
  
 	public float moveSpeed;						// The Speed the character will move
  
@@ -19,6 +19,8 @@ public class move : MonoBehaviour {
 
 		myTransform = transform;							// sets myTransform to this GameObject.transform
 		destinationPosition = myTransform.position;			// prevents myTransform reset
+
+        anim = GetComponent<Animator>();
 	}
  
 	void Update () {
@@ -26,7 +28,7 @@ public class move : MonoBehaviour {
 		// keep track of the distance between this gameObject and destinationPosition
 		destinationDistance = Vector3.Distance(destinationPosition, myTransform.position);
  
-		if(destinationDistance < .001f){		// To prevent shakin behavior when near destination
+		if(destinationDistance < .1f){		// To prevent shakin behavior when near destination
 			moveSpeed = 0;
 			Run=false;
 			
@@ -35,7 +37,7 @@ public class move : MonoBehaviour {
 			moveSpeed = 5;
 			Run=true;
 		}
- 
+        anim.SetBool("Run", Run);
  
 		// Moves the Player if the Left Mouse Button was clicked
 		if (Input.GetMouseButtonDown(0)&& GUIUtility.hotControl ==0) {
@@ -75,9 +77,14 @@ public class move : MonoBehaviour {
 		}
  
 		// To prevent code from running if not needed
-		if(destinationDistance > .5f){
-			myTransform.position = Vector3.MoveTowards(myTransform.position, destinationPosition, moveSpeed * Time.deltaTime);
-		}
+        if (destinationDistance > .5f)
+        {
+            myTransform.position = Vector3.MoveTowards(myTransform.position, destinationPosition, moveSpeed * Time.deltaTime);
+        }
+        else 
+        {
+            myTransform.position = Vector3.MoveTowards(myTransform.position, destinationPosition, destinationDistance);
+        }
 	}
 	
 	/*static public Vector3 getDestinationPoint()
